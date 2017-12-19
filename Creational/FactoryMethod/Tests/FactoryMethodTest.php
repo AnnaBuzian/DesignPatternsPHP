@@ -2,54 +2,32 @@
 
 namespace DesignPatterns\Creational\FactoryMethod\Tests;
 
-use DesignPatterns\Creational\FactoryMethod\Bicycle;
-use DesignPatterns\Creational\FactoryMethod\CarFerrari;
-use DesignPatterns\Creational\FactoryMethod\CarMercedes;
-use DesignPatterns\Creational\FactoryMethod\FactoryMethod;
-use DesignPatterns\Creational\FactoryMethod\GermanFactory;
-use DesignPatterns\Creational\FactoryMethod\ItalianFactory;
+use DesignPatterns\Creational\FactoryMethod\SMS;
+use DesignPatterns\Creational\FactoryMethod\Email;
+use DesignPatterns\Creational\FactoryMethod\Post;
+use DesignPatterns\Creational\FactoryMethod\ElectronicNotifierFactory;
+use DesignPatterns\Creational\FactoryMethod\CourierNotifierFactory;
 use PHPUnit\Framework\TestCase;
 
 class FactoryMethodTest extends TestCase
 {
-    public function testCanCreateCheapVehicleInGermany()
+    public function testCreateSMS()
     {
-        $factory = new GermanFactory();
-        $result = $factory->create(FactoryMethod::CHEAP);
-
-        $this->assertInstanceOf(Bicycle::class, $result);
+        $result = ElectronicNotifierFactory::getNotifier("SMS", "+380660000000");
+        $this->assertInstanceOf(SMS::class, $result);
     }
 
-    public function testCanCreateFastVehicleInGermany()
-    {
-        $factory = new GermanFactory();
-        $result = $factory->create(FactoryMethod::FAST);
 
-        $this->assertInstanceOf(CarMercedes::class, $result);
+    public function testCreateEmail()
+    {
+        $email = ElectronicNotifierFactory::getNotifier('Email', 'test@gmail.com');
+        $this->assertInstanceOf(Email::class, $email);
     }
 
-    public function testCanCreateCheapVehicleInItaly()
+
+    public function testCreatePost()
     {
-        $factory = new ItalianFactory();
-        $result = $factory->create(FactoryMethod::CHEAP);
-
-        $this->assertInstanceOf(Bicycle::class, $result);
-    }
-
-    public function testCanCreateFastVehicleInItaly()
-    {
-        $factory = new ItalianFactory();
-        $result = $factory->create(FactoryMethod::FAST);
-
-        $this->assertInstanceOf(CarFerrari::class, $result);
-    }
-
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage spaceship is not a valid vehicle
-     */
-    public function testUnknownType()
-    {
-        (new ItalianFactory())->create('spaceship');
+        $email = CourierNotifierFactory::getNotifier('Post', '10 Abhazka Street, 49010');
+        $this->assertInstanceOf(Post::class, $email);
     }
 }
