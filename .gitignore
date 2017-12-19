@@ -1,0 +1,6 @@
+# common
+.idea
+/vendor/
+_build/
+phpunit.xml
+composer.phar
