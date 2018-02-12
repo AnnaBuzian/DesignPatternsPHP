@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>PHP</ID>
-  <OriginalElement>\DesignPatterns\Structural\Bridge\HtmlFormatter</OriginalElement>
+  <OriginalElement>/Users/annabuzian/Sites/DesignPatternsPHP/Structural/Bridge</OriginalElement>
   <nodes>
-    <node x="-111.0" y="-111.0">\DesignPatterns\Structural\Bridge\PlainTextFormatter</node>
-    <node x="-194.0" y="-212.0">\DesignPatterns\Structural\Bridge\FormatterInterface</node>
-    <node x="88.0" y="-239.0">\DesignPatterns\Structural\Bridge\Service</node>
-    <node x="121.0" y="-93.0">\DesignPatterns\Structural\Bridge\HelloWorldService</node>
-    <node x="-278.0" y="-111.0">\DesignPatterns\Structural\Bridge\HtmlFormatter</node>
+    <node x="493.4027777777777" y="511.52777777777777">/Users/annabuzian/Sites/DesignPatternsPHP/Structural/Bridge/Tests</node>
+    <node x="-182.72222222222223" y="116.91319444444446">\DesignPatterns\Structural\Bridge\SolidColor</node>
+    <node x="-280.47222222222223" y="4.913194444444457">\DesignPatterns\Structural\Bridge\BackgroundInterface</node>
+    <node x="226.0" y="101.0">\DesignPatterns\Structural\Bridge\Square</node>
+    <node x="0.0" y="101.0">\DesignPatterns\Structural\Bridge\Circle</node>
+    <node x="-374.72222222222223" y="105.91319444444446">\DesignPatterns\Structural\Bridge\GradientColor</node>
+    <node x="604.4027777777777" y="511.52777777777777">/Users/annabuzian/Sites/DesignPatternsPHP/Structural/Bridge/uml</node>
+    <node x="154.0" y="0.0">\DesignPatterns\Structural\Bridge\ShapeInterface</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="\DesignPatterns\Structural\Bridge\HelloWorldService" target="\DesignPatterns\Structural\Bridge\Service">
-      <point x="0.0" y="-25.5" />
-      <point x="0.0" y="48.0" />
+    <edge source="\DesignPatterns\Structural\Bridge\SolidColor" target="\DesignPatterns\Structural\Bridge\BackgroundInterface">
+      <point x="0.0" y="-48.5" />
+      <point x="-111.22222222222223" y="80.91319444444446" />
+      <point x="-159.72222222222223" y="80.91319444444446" />
+      <point x="40.25" y="25.5" />
     </edge>
-    <edge source="\DesignPatterns\Structural\Bridge\PlainTextFormatter" target="\DesignPatterns\Structural\Bridge\FormatterInterface">
-      <point x="0.0" y="-25.5" />
-      <point x="-35.5" y="-136.0" />
-      <point x="-83.0" y="-136.0" />
-      <point x="37.0" y="25.5" />
+    <edge source="\DesignPatterns\Structural\Bridge\Circle" target="\DesignPatterns\Structural\Bridge\ShapeInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="103.0" y="76.0" />
+      <point x="185.0" y="76.0" />
+      <point x="-31.0" y="25.5" />
     </edge>
-    <edge source="\DesignPatterns\Structural\Bridge\HtmlFormatter" target="\DesignPatterns\Structural\Bridge\FormatterInterface">
-      <point x="0.0" y="-25.5" />
-      <point x="-204.5" y="-136.0" />
-      <point x="-157.0" y="-136.0" />
-      <point x="-37.0" y="25.5" />
+    <edge source="\DesignPatterns\Structural\Bridge\GradientColor" target="\DesignPatterns\Structural\Bridge\BackgroundInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="-288.72222222222223" y="80.91319444444446" />
+      <point x="-240.22222222222223" y="80.91319444444446" />
+      <point x="-40.25" y="25.5" />
+    </edge>
+    <edge source="\DesignPatterns\Structural\Bridge\Square" target="\DesignPatterns\Structural\Bridge\ShapeInterface">
+      <point x="0.0" y="-59.5" />
+      <point x="329.0" y="76.0" />
+      <point x="247.0" y="76.0" />
+      <point x="31.0" y="25.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="147.5" y="130.5" />
+  <settings layout="Hierarchic Group" zoom="0.8112676056338028" x="136.0" y="289.53125" />
   <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constants</Category>
+    <Category>Constructors</Category>
     <Category>Methods</Category>
   </Categories>
   <VISIBILITY>private</VISIBILITY>

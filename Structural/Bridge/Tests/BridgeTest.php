@@ -2,20 +2,25 @@
 
 namespace DesignPatterns\Structural\Bridge\Tests;
 
-use DesignPatterns\Structural\Bridge\HelloWorldService;
-use DesignPatterns\Structural\Bridge\HtmlFormatter;
-use DesignPatterns\Structural\Bridge\PlainTextFormatter;
+
+use DesignPatterns\Structural\Bridge\Circle;
+use DesignPatterns\Structural\Bridge\GradientColor;
+use DesignPatterns\Structural\Bridge\SolidColor;
+use DesignPatterns\Structural\Bridge\Square;
 use PHPUnit\Framework\TestCase;
 
 class BridgeTest extends TestCase
 {
-    public function testCanPrintUsingThePlainTextPrinter()
+    public function testCanDrawCircleWithSolidBackground()
     {
-        $service = new HelloWorldService(new PlainTextFormatter());
-        $this->assertEquals('Hello World', $service->get());
+        $circle = new Circle(7.12, new SolidColor("RED"));
+        $this->assertEquals('Create a circle with radius: 7.12. Fill with: RED', $circle->draw());
+    }
 
-        // now change the implementation and use the HtmlFormatter instead
-        $service->setImplementation(new HtmlFormatter());
-        $this->assertEquals('<p>Hello World</p>', $service->get());
+
+    public function testCanDrawSquareWithGradientBackground()
+    {
+        $circle = new Square(7.3, new GradientColor("RED", "GREEN"));
+        $this->assertEquals('Create a square with width: 7.3. Fill with: RED & GREEN', $circle->draw());
     }
 }
