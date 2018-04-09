@@ -11,8 +11,6 @@ namespace DesignPatterns\Structural\Proxy;
 
 class Account
 {
-    const PIN_COUNT = '1111';
-    const CARD_COUNT = '9999999';
 
     /** @var string */
     private $accountNumber;
@@ -23,10 +21,16 @@ class Account
     /** @var ATMCard $cardNumber */
     private $cardNumber;
 
+    /** @var int */
+    protected $_pinCount = 1111;
+
+    /** @var int */
+    protected $_cardCount = 9999999;
+
     public function __construct($accountNumber){
         $this->accountNumber = $accountNumber;
         $this->amount = 0.0;
-        $this->cardNumber  = new ATMCard($accountNumber, self::PIN_COUNT, self::CARD_COUNT);
+        $this->cardNumber  = new ATMCard($accountNumber, (string)$this->_pinCount++, (string)$this->_cardCount++);
     }
 
     /**

@@ -19,4 +19,18 @@ class User
     /** @var Account */
     public $account;
 
+
+    /**
+     * User constructor.
+     * @param $name
+     * @param $email
+     * @param $account
+     */
+    public function __construct($name, $email, Account $account)
+    {
+        $this->name = $name;
+        $this->email = $email;
+        $this->account = $account;
+    }
+
 }
