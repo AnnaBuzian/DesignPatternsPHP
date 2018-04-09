@@ -29,7 +29,6 @@ class User
 
 class Account
 {
-
     /** @var string */
     private $accountNumber;
 
@@ -231,7 +230,6 @@ class CoreBanking implements BankingInterface
         $currentAmount = $user->account->getAmount();
         $currentAmount += $amount;
         $user->account->setAmount($currentAmount);
-
         return $user->account->getAccountNumber();
     }
 
@@ -245,10 +243,13 @@ class CoreBanking implements BankingInterface
     public function withdraw(User $user, $amount)
     {
         $currentAmount = $user->account->getAmount();
+
         if($currentAmount >= $amount){
             $currentAmount -= $amount;
         }else{
-            throw new \Exception("Your current balance is low, Please select a lower amount");
+            throw new \Exception(
+                "Your current balance is low, Please select a lower amount"
+            );
         }
         $user->account->setAmount($currentAmount);
 
@@ -412,4 +413,4 @@ $bankATM = new BankATM("pb-01");
 
 Transaction::executeTransactionsByAccount($bank, '12345');
 
-Transaction::executeTransactionsByPin($bank, $bankATM, '1114');
+Transaction::executeTransactionsByPin($bank, $bankATM, '1112');
