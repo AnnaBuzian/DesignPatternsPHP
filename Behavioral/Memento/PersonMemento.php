@@ -3,67 +3,37 @@
 namespace DesignPatterns\Behavioral\Memento;
 
 /**
- * Class PersonMemento
+ * Class PersonMemento - State
  * @package DesignPatterns\Behavioral\Memento
  */
 class PersonMemento
 {
-    /** @var string */
-    private $firstName;
-
-    /** @var string */
-    private $lastName;
-
-    /** @var string */
-    private $phone;
-
-    /** @var string */
-    private $address;
+    /**
+     * @var Person
+     */
+    private $informationPerson;
 
     /**
-     * PersonMemento constructor.
-     * @param string $fName
-     * @param string $lName
-     * @param string $cell
-     * @param string $address
+     * @param Person $informationPerson
      */
-    public function __construct(string $fName, string $lName, string $cell, string $address)
+    public function __construct(Person $informationPerson)
     {
-        $this->firstName = $fName;
-        $this->lastName = $lName;
-        $this->phone = $cell;
-        $this->address = $address;
+        $this->informationPerson = $informationPerson;
     }
 
     /**
-     * @return string
+     * @return Person
      */
-    public function getFirstName(): string
+    public function getInformationPerson(): Person
     {
-        return $this->firstName;
+        return $this->informationPerson;
     }
 
     /**
-     * @return string
+     * @param Person $informationPerson
      */
-    public function getLastName(): string
+    public function setInformationPerson(Person $informationPerson)
     {
-        return $this->lastName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPhone(): string
-    {
-        return $this->phone;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAddress(): string
-    {
-        return $this->address;
+        $this->informationPerson = $informationPerson;
     }
 }

@@ -6,6 +6,8 @@ services:
     volumes:
       - .:/opt/php
       - ./docker/run.sh:/opt/php/docker/run.sh
-    privileged: true
-    entrypoint: /bin/bash
-    command: ["/opt/php/docker/run.sh"]
+    working_dir: /opt/php
+    restart: unless-stopped
+#    privileged: true
+#    entrypoint: /bin/bash
+#    command: ["/opt/php/docker/run.sh"]

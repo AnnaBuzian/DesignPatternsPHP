@@ -9,7 +9,7 @@
 namespace DesignPatterns\Behavioral\Memento;
 
 /**
- * Class PersonCaretaker
+ * Class PersonCaretaker - "Caretaker"
  * @package DesignPatterns\Behavioral\Memento
  */
 class PersonCaretaker

@@ -3,7 +3,7 @@
 namespace DesignPatterns\Behavioral\Memento;
 
 /**
- * Class Person
+ * Class Person - "Originator" in this implementation
  * @package DesignPatterns\Behavioral\Memento
  */
 class Person
@@ -19,6 +19,22 @@ class Person
 
     /** @var string */
     private $address;
+
+
+    /**
+     * Person constructor.
+     * @param string $firstName
+     * @param string $lastName
+     * @param string $phone
+     * @param string $address
+     */
+    public function __construct(string $firstName, string $lastName, string $phone, string $address)
+    {
+        $this->firstName = $firstName;
+        $this->lastName = $lastName;
+        $this->phone = $phone;
+        $this->address = $address;
+    }
 
     /**
      * @return string
@@ -89,7 +105,7 @@ class Person
      */
     public function saveMemento()
     {
-        return new PersonMemento($this->firstName, $this->lastName, $this->phone, $this->address);
+        return new PersonMemento($this);
     }
 
     /**
@@ -97,9 +113,9 @@ class Person
      */
     public function restoreMemento(PersonMemento $memento)
     {
-        $this->setFirstName($memento->getFirstName());
-        $this->setLastName($memento->getLastName());
-        $this->setPhone($memento->getPhone());
-        $this->setAddress($memento->getAddress());
+        $this->setFirstName($memento->getInformationPerson()->getFirstName());
+        $this->setLastName($memento->getInformationPerson()->getLastName());
+        $this->setPhone($memento->getInformationPerson()->getPhone());
+        $this->setAddress($memento->getInformationPerson()->getAddress());
     }
 }
