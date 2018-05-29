@@ -105,7 +105,7 @@ class Person
      */
     public function saveMemento()
     {
-        return new PersonMemento($this);
+        return new PersonMemento(clone $this);
     }
 
     /**
@@ -113,9 +113,9 @@ class Person
      */
     public function restoreMemento(PersonMemento $memento)
     {
-        $this->setFirstName($memento->getInformationPerson()->getFirstName());
-        $this->setLastName($memento->getInformationPerson()->getLastName());
-        $this->setPhone($memento->getInformationPerson()->getPhone());
-        $this->setAddress($memento->getInformationPerson()->getAddress());
+        $this->firstName = $memento->getInformationPerson()->getFirstName();
+        $this->lastName  = $memento->getInformationPerson()->getLastName();
+        $this->phone     = $memento->getInformationPerson()->getPhone();
+        $this->address   = $memento->getInformationPerson()->getAddress();
     }
 }

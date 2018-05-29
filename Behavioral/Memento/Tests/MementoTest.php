@@ -3,7 +3,6 @@
 namespace DesignPatterns\Behavioral\Memento\Tests;
 
 use DesignPatterns\Behavioral\Memento\PersonCaretaker;
-use DesignPatterns\Behavioral\Memento\PersonMemento;
 use DesignPatterns\Behavioral\Memento\Person;
 use PHPUnit\Framework\TestCase;
 
@@ -36,9 +35,7 @@ class MementoTest extends TestCase
         $caretaker = new PersonCaretaker();
         $caretaker->setMemento($person->saveMemento());
 
-        $person->setLastName("Сидоров");
-        $caretaker->setMemento($person->saveMemento());
-
+        $person->setFirstName("Сидоров");
         $person->restoreMemento($caretaker->getMemento());
 
         $this->assertEquals("Петров", (string) $person->getFirstName());
