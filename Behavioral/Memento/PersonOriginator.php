@@ -6,7 +6,7 @@ namespace DesignPatterns\Behavioral\Memento;
  * Class Person - "Originator" in this implementation
  * @package DesignPatterns\Behavioral\Memento
  */
-class Person
+class PersonOriginator
 {
     /** @var string */
     private $firstName;
