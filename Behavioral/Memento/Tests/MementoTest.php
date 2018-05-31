@@ -24,10 +24,10 @@ class MementoTest extends TestCase
         $caretaker = new PersonCaretaker();
         $caretaker->setMemento($person->saveMemento());
 
-        $person->setFirstName("Сидоров");
-        $this->assertEquals("Сидоров", (string) $person->getFirstName());
+        $person->getCurrentState()->setFirstName("Сидоров");
+        $this->assertEquals("Петров", (string) $person->getCurrentState()->getFirstName());
 
         $person->restoreMemento($caretaker->getMemento());
-        $this->assertEquals("Петров", (string) $person->getFirstName());
+        $this->assertEquals("Петров", (string) $person->getCurrentState()->getFirstName());
     }
 }

@@ -9,23 +9,25 @@ namespace DesignPatterns\Behavioral\Memento;
 class PersonMemento
 {
     /**
-     * @var PersonOriginator
+     * @var PersonState
      */
-    private $informationPerson;
+    private $personState;
+
+
 
     /**
-     * @param PersonOriginator $informationPerson
+     * @param PersonState $personState
      */
-    public function __construct(PersonOriginator $informationPerson)
+    public function __construct(PersonState $personState)
     {
-        $this->informationPerson = $informationPerson;
+        $this->personState = $personState;
     }
 
     /**
-     * @return PersonOriginator
+     * @return PersonState
      */
-    public function getInformationPerson(): PersonOriginator
+    public function getPersonState(): PersonState
     {
-        return $this->informationPerson;
+        return $this->personState;
     }
 }
