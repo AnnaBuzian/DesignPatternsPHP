@@ -18,4 +18,5 @@ Read more about how to install and use `Composer` on your local machine [here](h
 
 ```bash
 $ ./vendor/bin/phpunit
+$ docker-compose run --rm php php ./vendor/bin/phpunit Behavioral/TemplateMethod/Tests/
 ```
