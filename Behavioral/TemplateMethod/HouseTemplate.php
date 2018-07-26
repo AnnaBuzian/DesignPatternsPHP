@@ -21,10 +21,10 @@ abstract class HouseTemplate
     private $house = [];
 
     /**
-     * Построить дом
+     * Построить дом (template method)
      * @return string
      */
-    public function buildHouse()
+    final public function buildHouse()
     {
         $this->house[] = $this->buildFoundation();
         $this->house[] = $this->buildPillars();
